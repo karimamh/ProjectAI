@@ -1,0 +1,510 @@
+[
+  {
+    "job_id": "J01",
+    "title": "Développeur logiciel",
+    "required_blocks": [1],
+    "required_competencies": [
+      {
+        "competency": "concevoir des architectures logicielles orientées objet",
+        "weight": 1.0
+      },
+      {
+        "competency": "développer la logique d'application avec des langages de programmation",
+        "weight": 1.0
+      },
+      {
+        "competency": "écrire du code propre et maintenable avec un système de versioning",
+        "weight": 0.9
+      },
+      {
+        "competency": "déboguer et corriger des problèmes dans les applications",
+        "weight": 0.9
+      },
+      {
+        "competency": "utiliser des algorithmes et des structures de données pour résoudre des problèmes",
+        "weight": 0.8
+      },
+      {
+        "competency": "développer et maintenir des services backend",
+        "weight": 0.7
+      },
+      {
+        "competency": "écrire des tests unitaires et automatisés",
+        "weight": 0.8
+      },
+      {
+        "competency": "mettre en place des pipelines d'intégration continue",
+        "weight": 0.6
+      }
+    ]
+  },
+  {
+    "job_id": "J02",
+    "title": "Développeur backend",
+    "required_blocks": [1],
+    "required_competencies": [
+      {
+        "competency": "développer et maintenir des services backend",
+        "weight": 1.0
+      },
+      {
+        "competency": "écrire du code propre et maintenable avec un système de versioning",
+        "weight": 1.0
+      },
+      {
+        "competency": "utiliser des algorithmes et des structures de données pour résoudre des problèmes",
+        "weight": 0.9
+      },
+      {
+        "competency": "concevoir des architectures logicielles orientées objet",
+        "weight": 0.8
+      },
+      {
+        "competency": "déboguer et corriger des problèmes dans les applications",
+        "weight": 0.8
+      },
+      {
+        "competency": "développer la logique d'application avec des langages de programmation",
+        "weight": 0.9
+      },
+      {
+        "competency": "écrire des tests unitaires et automatisés",
+        "weight": 0.7
+      },
+      {
+        "competency": "mettre en place des pipelines d'intégration continue",
+        "weight": 0.6
+      }
+    ]
+  },
+  {
+    "job_id": "J03",
+    "title": "Développeur frontend",
+    "required_blocks": [2],
+    "required_competencies": [
+      {
+        "competency": "développer des interfaces utilisateur responsives",
+        "weight": 1.0
+      },
+      {
+        "competency": "utiliser HTML CSS et JavaScript pour construire des pages web",
+        "weight": 1.0
+      },
+      {
+        "competency": "optimiser les performances et la vitesse de chargement d'un site web",
+        "weight": 0.9
+      },
+      {
+        "competency": "développer des applications web full stack avec des frameworks modernes",
+        "weight": 0.8
+      },
+      {
+        "competency": "intégrer des bibliothèques et services tiers dans une application web",
+        "weight": 0.7
+      },
+      {
+        "competency": "créer et maintenir des API REST",
+        "weight": 0.6
+      },
+      {
+        "competency": "gérer l'état d'une application avec des outils de gestion de state",
+        "weight": 0.8
+      },
+      {
+        "competency": "mettre en place des tests end to end pour une application web",
+        "weight": 0.7
+      }
+    ]
+  },
+  {
+    "job_id": "J04",
+    "title": "Développeur full-stack",
+    "required_blocks": [1, 2],
+    "required_competencies": [
+      {
+        "competency": "développer des interfaces utilisateur responsives",
+        "weight": 1.0
+      },
+      {
+        "competency": "créer et maintenir des API REST",
+        "weight": 1.0
+      },
+      {
+        "competency": "développer la logique d'application avec des langages de programmation",
+        "weight": 0.9
+      },
+      {
+        "competency": "utiliser HTML CSS et JavaScript pour construire des pages web",
+        "weight": 0.9
+      },
+      {
+        "competency": "développer des applications web full stack avec des frameworks modernes",
+        "weight": 1.0
+      },
+      {
+        "competency": "écrire du code propre et maintenable avec un système de versioning",
+        "weight": 0.8
+      },
+      {
+        "competency": "optimiser les performances et la vitesse de chargement d'un site web",
+        "weight": 0.7
+      },
+      {
+        "competency": "développer et maintenir des services backend",
+        "weight": 0.8
+      },
+      {
+        "competency": "intégrer des bibliothèques et services tiers dans une application web",
+        "weight": 0.7
+      },
+      {
+        "competency": "déboguer et corriger des problèmes dans les applications",
+        "weight": 0.8
+      }
+    ]
+  },
+  {
+    "job_id": "J05",
+    "title": "Data Analyst",
+    "required_blocks": [3],
+    "required_competencies": [
+      {
+        "competency": "préparer et nettoyer des jeux de données",
+        "weight": 1.0
+      },
+      {
+        "competency": "créer des tableaux de bord et des visualisations",
+        "weight": 1.0
+      },
+      {
+        "competency": "écrire des requêtes SQL pour extraire des données",
+        "weight": 1.0
+      },
+      {
+        "competency": "réaliser des analyses statistiques",
+        "weight": 0.9
+      },
+      {
+        "competency": "construire des pipelines de traitement de données",
+        "weight": 0.7
+      },
+      {
+        "competency": "automatiser des processus de collecte et de transformation de données",
+        "weight": 0.6
+      },
+      {
+        "competency": "développer des scripts Python ou R pour l'analyse de données",
+        "weight": 0.8
+      },
+      {
+        "competency": "utiliser des outils de Business Intelligence",
+        "weight": 0.8
+      }
+    ]
+  },
+  {
+    "job_id": "J06",
+    "title": "Data Scientist",
+    "required_blocks": [3, 4, 5],
+    "required_competencies": [
+      {
+        "competency": "construire des modèles de machine learning",
+        "weight": 1.0
+      },
+      {
+        "competency": "réaliser des analyses statistiques",
+        "weight": 1.0
+      },
+      {
+        "competency": "préparer et nettoyer des jeux de données",
+        "weight": 0.9
+      },
+      {
+        "competency": "évaluer et optimiser la performance d'un modèle",
+        "weight": 0.9
+      },
+      {
+        "competency": "préparer les données pour l'entraînement de modèles",
+        "weight": 0.9
+      },
+      {
+        "competency": "prétraiter du texte à l'aide de techniques de tokenisation",
+        "weight": 0.7
+      },
+      {
+        "competency": "développer des scripts Python ou R pour l'analyse de données",
+        "weight": 0.8
+      },
+      {
+        "competency": "construire des pipelines de traitement de données",
+        "weight": 0.7
+      },
+      {
+        "competency": "utiliser des embeddings pour représenter le sens des textes",
+        "weight": 0.6
+      },
+      {
+        "competency": "créer des tableaux de bord et des visualisations",
+        "weight": 0.6
+      }
+    ]
+  },
+  {
+    "job_id": "J07",
+    "title": "Machine Learning Engineer",
+    "required_blocks": [4, 6],
+    "required_competencies": [
+      {
+        "competency": "entraîner des réseaux de neurones",
+        "weight": 1.0
+      },
+      {
+        "competency": "préparer les données pour l'entraînement de modèles",
+        "weight": 1.0
+      },
+      {
+        "competency": "déployer des modèles de machine learning en production",
+        "weight": 1.0
+      },
+      {
+        "competency": "construire des modèles de machine learning",
+        "weight": 0.9
+      },
+      {
+        "competency": "évaluer et optimiser la performance d'un modèle",
+        "weight": 0.9
+      },
+      {
+        "competency": "déployer des applications sur une plateforme cloud",
+        "weight": 0.8
+      },
+      {
+        "competency": "mettre en place des pipelines CI CD",
+        "weight": 0.8
+      },
+      {
+        "competency": "gérer des machines virtuelles et des conteneurs",
+        "weight": 0.7
+      },
+      {
+        "competency": "utiliser des frameworks de deep learning",
+        "weight": 0.9
+      },
+      {
+        "competency": "surveiller et maintenir des infrastructures cloud",
+        "weight": 0.6
+      }
+    ]
+  },
+  {
+    "job_id": "J08",
+    "title": "Ingénieur IA / NLP",
+    "required_blocks": [5],
+    "required_competencies": [
+      {
+        "competency": "utiliser des embeddings pour représenter le sens des textes",
+        "weight": 1.0
+      },
+      {
+        "competency": "affiner des modèles de langage pour des tâches spécifiques",
+        "weight": 1.0
+      },
+      {
+        "competency": "développer des agents conversationnels basés sur des techniques NLP",
+        "weight": 1.0
+      },
+      {
+        "competency": "prétraiter du texte à l'aide de techniques de tokenisation",
+        "weight": 0.9
+      },
+      {
+        "competency": "construire et déployer des modèles NLP pour la production",
+        "weight": 0.9
+      },
+      {
+        "competency": "implémenter des techniques de génération augmentée par récupération",
+        "weight": 0.8
+      },
+      {
+        "competency": "entraîner des réseaux de neurones",
+        "weight": 0.7
+      },
+      {
+        "competency": "évaluer et optimiser la performance d'un modèle",
+        "weight": 0.8
+      }
+    ]
+  },
+  {
+    "job_id": "J09",
+    "title": "Ingénieur cloud",
+    "required_blocks": [6],
+    "required_competencies": [
+      {
+        "competency": "déployer des applications sur une plateforme cloud",
+        "weight": 1.0
+      },
+      {
+        "competency": "gérer des machines virtuelles et des conteneurs",
+        "weight": 1.0
+      },
+      {
+        "competency": "mettre en place des pipelines CI CD",
+        "weight": 1.0
+      },
+      {
+        "competency": "configurer et gérer des services cloud",
+        "weight": 0.9
+      },
+      {
+        "competency": "surveiller et maintenir des infrastructures cloud",
+        "weight": 0.9
+      },
+      {
+        "competency": "automatiser le provisionnement d'infrastructures avec des outils IaC",
+        "weight": 0.8
+      },
+      {
+        "competency": "optimiser les coûts d'utilisation d'une plateforme cloud",
+        "weight": 0.7
+      },
+      {
+        "competency": "déployer des modèles de machine learning en production",
+        "weight": 0.6
+      }
+    ]
+  },
+  {
+    "job_id": "J10",
+    "title": "Cybersecurity Analyst",
+    "required_blocks": [7],
+    "required_competencies": [
+      {
+        "competency": "identifier des vulnérabilités dans un système informatique",
+        "weight": 1.0
+      },
+      {
+        "competency": "mettre en place des mesures de sécurité réseau",
+        "weight": 1.0
+      },
+      {
+        "competency": "réaliser des tests d'intrusion sur des applications",
+        "weight": 1.0
+      },
+      {
+        "competency": "élaborer des procédures de réponse aux incidents de sécurité",
+        "weight": 0.9
+      },
+      {
+        "competency": "analyser les logs et détecter des comportements anormaux",
+        "weight": 0.9
+      },
+      {
+        "competency": "appliquer des techniques de chiffrement et d'authentification",
+        "weight": 0.8
+      },
+      {
+        "competency": "réaliser un audit de sécurité d'une infrastructure réseau",
+        "weight": 0.8
+      },
+      {
+        "competency": "configurer des pare-feu et des systèmes de détection d'intrusion",
+        "weight": 0.8
+      }
+    ]
+  },
+  {
+    "job_id": "J11",
+    "title": "Consultant cybersécurité",
+    "required_blocks": [7],
+    "required_competencies": [
+      {
+        "competency": "identifier des vulnérabilités dans un système informatique",
+        "weight": 1.0
+      },
+      {
+        "competency": "élaborer des procédures de réponse aux incidents de sécurité",
+        "weight": 1.0
+      },
+      {
+        "competency": "appliquer des techniques de chiffrement et d'authentification",
+        "weight": 0.9
+      },
+      {
+        "competency": "réaliser un audit de sécurité d'une infrastructure réseau",
+        "weight": 1.0
+      },
+      {
+        "competency": "mettre en place des mesures de sécurité réseau",
+        "weight": 0.9
+      },
+      {
+        "competency": "réaliser des tests d'intrusion sur des applications",
+        "weight": 0.8
+      },
+      {
+        "competency": "analyser les logs et détecter des comportements anormaux",
+        "weight": 0.7
+      },
+      {
+        "competency": "configurer des pare-feu et des systèmes de détection d'intrusion",
+        "weight": 0.7
+      }
+    ]
+  },
+  {
+    "job_id": "J12",
+    "title": "Chef de projet IT",
+    "required_blocks": [8],
+    "required_competencies": [
+      {
+        "competency": "coordonner une équipe de développement",
+        "weight": 1.0
+      },
+      {
+        "competency": "planifier des étapes et des livrables projet",
+        "weight": 1.0
+      },
+      {
+        "competency": "gérer les besoins techniques et les ressources d'un projet",
+        "weight": 1.0
+      },
+      {
+        "competency": "animer des cérémonies agiles avec une équipe",
+        "weight": 0.9
+      },
+      {
+        "competency": "communiquer l'avancement du projet aux parties prenantes",
+        "weight": 0.9
+      },
+      {
+        "competency": "gérer les risques et priorités d'un projet",
+        "weight": 0.9
+      },
+      {
+        "competency": "définir un backlog produit",
+        "weight": 0.8
+      },
+      {
+        "competency": "rédiger une documentation technique et fonctionnelle",
+        "weight": 0.7
+      },
+      {
+        "competency": "organiser des réunions de suivi projet",
+        "weight": 0.6
+      },
+      {
+        "competency": "établir un cahier des charges complet",
+        "weight": 0.8
+      },
+      {
+        "competency": "évaluer la faisabilité technique d'une fonctionnalité",
+        "weight": 0.7
+      },
+      {
+        "competency": "collaborer avec des équipes pluridisciplinaires",
+        "weight": 0.8
+      }
+    ]
+  }
+]

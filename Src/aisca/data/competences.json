@@ -1,0 +1,146 @@
+[
+  {
+    "block_id": 1,
+    "block_name": "Développement logiciel",
+    "competencies": [
+      "concevoir des architectures logicielles orientées objet",
+      "développer la logique d’application avec des langages de programmation",
+      "écrire du code propre et maintenable avec un système de versioning",
+      "déboguer et corriger des problèmes dans les applications",
+      "utiliser des algorithmes et des structures de données pour résoudre des problèmes",
+      "développer et maintenir des services backend",
+      "écrire des tests unitaires et automatisés",
+      "documenter le fonctionnement d'une application logicielle",
+      "gérer les dépendances d’un projet logiciel",
+      "mettre en place des pipelines d'intégration continue",
+      "optimiser les performances d’une application",
+      "réaliser des revues de code structurées"
+    ]
+  },
+  {
+    "block_id": 2,
+    "block_name": "Développement web",
+    "competencies": [
+      "développer des interfaces utilisateur responsives",
+      "créer et maintenir des API REST",
+      "utiliser HTML CSS et JavaScript pour construire des pages web",
+      "développer des applications web full stack avec des frameworks modernes",
+      "optimiser les performances et la vitesse de chargement d’un site web",
+      "intégrer des bibliothèques et services tiers dans une application web",
+      "gérer l’authentification et les sessions utilisateurs",
+      "mettre en œuvre des normes de sécurité web",
+      "structurer une base de données pour une application web",
+      "déployer un site web sur un hébergement cloud ou VPS",
+      "créer des composants UI réutilisables",
+      "adapter un site web aux contraintes mobiles"
+    ]
+  },
+  {
+    "block_id": 3,
+    "block_name": "Analyse de données",
+    "competencies": [
+      "préparer et nettoyer des jeux de données",
+      "créer des tableaux de bord et des visualisations",
+      "réaliser des analyses statistiques",
+      "écrire des requêtes SQL pour extraire des données",
+      "utiliser Python pour manipuler et analyser des données",
+      "interpréter des données pour aider à la prise de décision",
+      "détecter des anomalies dans les données",
+      "automatiser des traitements de données avec Python",
+      "réaliser des jointures complexes en SQL",
+      "identifier les indicateurs clés de performance",
+      "mettre en place des pipelines d’analyse de données",
+      "documenter les insights obtenus"
+    ]
+  },
+  {
+    "block_id": 4,
+    "block_name": "Machine Learning",
+    "competencies": [
+      "construire des modèles de classification et de régression",
+      "entraîner des réseaux de neurones",
+      "évaluer les performances d’un modèle de machine learning",
+      "ajuster les hyperparamètres pour améliorer un modèle",
+      "préparer les données pour l’entraînement de modèles",
+      "déployer des modèles de machine learning en production",
+      "sélectionner les meilleures features d’un dataset",
+      "gérer le surapprentissage et le sous-apprentissage",
+      "appliquer des techniques de validation croisée",
+      "implémenter des modèles non supervisés",
+      "analyser l’importance des variables",
+      "surveiller les modèles en production"
+    ]
+  },
+  {
+    "block_id": 5,
+    "block_name": "Intelligence artificielle et NLP",
+    "competencies": [
+      "prétraiter du texte à l’aide de techniques de tokenisation",
+      "construire des systèmes de recherche sémantique",
+      "utiliser des embeddings pour représenter le sens des textes",
+      "affiner des modèles de langage pour des tâches spécifiques",
+      "réaliser de l’analyse de sentiments et l’extraction d’entités",
+      "développer des agents conversationnels basés sur des techniques NLP",
+      "mettre en place un pipeline NLP complet",
+      "traiter des corpus textuels volumineux",
+      "utiliser des modèles Transformers",
+      "réaliser des tâches de classification de texte",
+      "détecter des similarités sémantiques dans des documents",
+      "analyser la qualité d’un modèle NLP"
+    ]
+  },
+  {
+    "block_id": 6,
+    "block_name": "Cloud Computing",
+    "competencies": [
+      "déployer des applications sur une plateforme cloud",
+      "gérer des machines virtuelles et des conteneurs",
+      "configurer des systèmes de stockage et des bases de données cloud",
+      "mettre en place des pipelines CI CD",
+      "optimiser l’utilisation des ressources cloud pour réduire les coûts",
+      "sécuriser une infrastructure hébergée dans le cloud",
+      "utiliser Docker pour isoler des environnements",
+      "déployer des services avec Kubernetes",
+      "gérer des identités et accès cloud (IAM)",
+      "surveiller les performances des services cloud",
+      "configurer des réseaux virtuels et pare-feu",
+      "automatiser le déploiement via Infrastructure as Code"
+    ]
+  },
+  {
+    "block_id": 7,
+    "block_name": "Cybersécurité",
+    "competencies": [
+      "identifier des vulnérabilités dans un système informatique",
+      "mettre en place des mesures de sécurité réseau",
+      "réaliser des tests d’intrusion sur des applications",
+      "surveiller des journaux système pour détecter des anomalies",
+      "appliquer des techniques de chiffrement et d’authentification",
+      "élaborer des procédures de réponse aux incidents de sécurité",
+      "mettre en place des pare-feu et règles de filtrage",
+      "utiliser des outils de scanning de vulnérabilités",
+      "sécuriser les communications réseau",
+      "réaliser une analyse de risque cyber",
+      "auditer la sécurité d’une infrastructure",
+      "former les équipes aux bonnes pratiques de sécurité"
+    ]
+  },
+  {
+    "block_id": 8,
+    "block_name": "Gestion de projet IT",
+    "competencies": [
+      "coordonner une équipe de développement",
+      "rédiger une documentation technique et fonctionnelle",
+      "planifier des étapes et des livrables projet",
+      "gérer les besoins techniques et les ressources d’un projet",
+      "animer des cérémonies agiles avec une équipe",
+      "communiquer l’avancement du projet aux parties prenantes",
+      "gérer les risques et priorités d’un projet",
+      "définir un backlog produit",
+      "collaborer avec des équipes pluridisciplinaires",
+      "établir un cahier des charges complet",
+      "évaluer la faisabilité technique d’une fonctionnalité",
+      "organiser des réunions de suivi projet"
+    ]
+  }
+]
