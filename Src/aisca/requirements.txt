@@ -4,3 +4,6 @@ streamlit
 plotly
 requests
 scikit-learn
+openai
+google-generativeai
+python-dotenv

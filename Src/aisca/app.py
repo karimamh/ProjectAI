@@ -1,27 +1,29 @@
 import streamlit as st
-from core.semantic_engine import SemanticEngine
 from core.rag_agent import RAGAgent
 import json
 from ui.ui_streamlit import show_questionnaire, show_results
+import os
 
 def load_data():
-    with open('data/competences.json', 'r', encoding='utf-8') as f:
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    data_dir = os.path.join(base_dir, 'data')
+    with open(os.path.join(data_dir, 'competences.json'), 'r', encoding='utf-8') as f:
         competences = json.load(f)
-    with open('data/metiers.json', 'r', encoding='utf-8') as f:
+    with open(os.path.join(data_dir, 'metiers.json'), 'r', encoding='utf-8') as f:
         metiers = json.load(f)
     return competences, metiers
 
 def main():
     st.title("AISCA - Mini-Agent RAG")
     competences, metiers = load_data()
-    # Ne pas passer semantic_engine ici
     rag_agent = RAGAgent(competences, metiers)
 
     user_input = show_questionnaire()
     if st.button("Analyser"):
         if user_input:
             results = rag_agent.analyze_user(user_input)
-            show_results(results)
+            llm_feedback = rag_agent.generate_llm_feedback(user_input, results)
+            show_results(results, llm_feedback)
         else:
             st.warning("Veuillez entrer vos compétences.")
 

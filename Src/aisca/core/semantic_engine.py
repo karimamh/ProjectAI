@@ -1,8 +1,9 @@
 from sentence_transformers import SentenceTransformer
-import numpy as np
-import json
 from sklearn.metrics.pairwise import cosine_similarity
 from utils.cache import Cache
+import json
+import os
+import numpy as np
 
 class SemanticEngine:
     def __init__(self, model_name='all-MiniLM-L6-v2'):
@@ -12,7 +13,11 @@ class SemanticEngine:
         self.competency_embeddings = self._precompute_competency_embeddings()
 
     def load_competencies(self):
-        with open('data/competences.json', 'r', encoding='utf-8') as f:
+        # Obtenir le chemin absolu vers le fichier
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        data_path = os.path.join(current_dir, '..', 'data', 'competences.json')
+        
+        with open(data_path, 'r', encoding='utf-8') as f:
             return json.load(f)
 
     def _precompute_competency_embeddings(self):
@@ -56,25 +61,27 @@ class SemanticEngine:
         missing = []
 
         for block in self.competencies:
-            block_id = block['block_id']
-            comp_texts = block['competencies']
-            comp_embeddings = self.competency_embeddings[block_id]
+            block_id = block.get('block_id')
+            comp_texts = block.get('competencies', [])
+            if not comp_texts:
+                continue  # Ignore les blocs vides
+
+            comp_embeddings = self.competency_embeddings.get(block_id)
+            if comp_embeddings is None or len(comp_embeddings) == 0:
+                continue
 
             scores = self.calculate_cosine_similarity(user_embeddings, comp_embeddings)
-            
-            # Max par compétence
             comp_max_scores = scores.max(axis=0)
-            
-            # Score du bloc = moyenne des scores des compétences
-            block_score = float(np.mean(comp_max_scores))
-            block_scores[block_id] = block_score
 
-            # Compétences maîtrisées/manquantes
+            block_score = float(np.mean(comp_max_scores))
+            block_scores[block.get('block_name', f'Bloc {block_id}')] = block_score
+
             for idx, comp_score in enumerate(comp_max_scores):
+                comp = comp_texts[idx]
                 if comp_score >= 0.5:
-                    mastered.append(comp_texts[idx])
+                    mastered.append(comp)
                 else:
-                    missing.append(comp_texts[idx])
+                    missing.append(comp)
 
         return {
             "block_scores": block_scores,
@@ -82,7 +89,6 @@ class SemanticEngine:
             "missing": missing,
             "user_embeddings": user_embeddings
         }
-
     def get_top_jobs(self, analysis_results, jobs_data):
         """Calcule le top 3 métiers avec pondération"""
         block_scores = analysis_results['block_scores']
