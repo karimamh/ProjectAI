@@ -1,7 +1,7 @@
 import streamlit as st
 from core.rag_agent import RAGAgent
 import json
-from ui.ui_streamlit import show_questionnaire, show_results
+from ui.ui_streamlit import show_questionnaire, show_results, show_job_competency_checkboxes
 import os
 
 def load_data():
@@ -19,10 +19,16 @@ def main():
     rag_agent = RAGAgent(competences, metiers)
 
     user_input = show_questionnaire()
+    selected_competencies = show_job_competency_checkboxes(metiers)
     if st.button("Analyser"):
-        if user_input:
-            results = rag_agent.analyze_user(user_input)
-            llm_feedback = rag_agent.generate_llm_feedback(user_input, results)
+        merged_input = []
+        if user_input and user_input.strip():
+            merged_input.append(user_input.strip())
+        merged_input.extend(selected_competencies)
+
+        if merged_input:
+            results = rag_agent.analyze_user(merged_input)
+            llm_feedback = rag_agent.generate_llm_feedback(merged_input, results)
             show_results(results, llm_feedback)
         else:
             st.warning("Veuillez entrer vos compétences.")

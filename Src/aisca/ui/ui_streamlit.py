@@ -53,6 +53,32 @@ def local_css():
 
 local_css()
 
+
+def show_job_competency_checkboxes(jobs):
+    st.markdown("### ✅ Compétences par métier (optionnel)")
+    st.caption("Cochez les compétences que vous maîtrisez déjà.")
+
+    selected_jobs = st.multiselect(
+        "Choisissez un ou plusieurs métiers",
+        options=jobs,
+        format_func=lambda j: j["title"]
+    )
+
+    selected_competencies = []
+
+    for job in selected_jobs:
+        with st.expander(f"Compétences - {job['title']}", expanded=False):
+            required = job.get("required_competencies", [])
+            for i, comp in enumerate(required):
+                comp_text = comp["competency"] if isinstance(comp, dict) else str(comp)
+                key = f"chk_{job.get('job_id', job['title'])}_{i}"
+                if st.checkbox(comp_text, key=key):
+                    selected_competencies.append(comp_text)
+
+    # retire les doublons en conservant l'ordre
+    selected_competencies = list(dict.fromkeys(selected_competencies))
+    return selected_competencies
+
 def show_questionnaire():
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
@@ -178,6 +204,8 @@ def show_results(results, llm_feedback=None):
             with st.spinner("Analyse approfondie en cours par Gemini..."):
                 st.empty()
 
+    
+
 # --- FONCTION PRINCIPALE ---
 def main():
     # Charger les données
@@ -191,19 +219,26 @@ def main():
     
     # Afficher le questionnaire
     user_input = show_questionnaire()
+
+    selected_competencies = show_job_competency_checkboxes(jobs)
     
-    if user_input:
+    if user_input or selected_competencies:
         # Centrage du bouton
         col1, col2, col3 = st.columns([1, 1, 1])
         with col2:
             if st.button("🚀 Analyser mon profil", use_container_width=True):
                 # Analyser le profil
-                results = rag_agent.analyze_user(user_input)
+                merged_input = []
+                if user_input and user_input.strip():
+                    merged_input.append(user_input.strip())
+                merged_input.extend(selected_competencies)
+
+                results = rag_agent.analyze_user(merged_input)
                 
                 # Générer le feedback IA si l'input est riche
                 llm_feedback = None
-                if not rag_agent.needs_enrichment(user_input):
-                    llm_feedback = rag_agent.generate_llm_feedback(user_input, results)
+                if not rag_agent.needs_enrichment(merged_input):
+                    llm_feedback = rag_agent.generate_llm_feedback(merged_input, results)
                 
                 # Afficher les résultats
                 show_results(results, llm_feedback)

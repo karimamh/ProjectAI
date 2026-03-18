@@ -3,6 +3,8 @@ import json
 import google.generativeai as genai
 from dotenv import load_dotenv
 import os
+import unicodedata
+import re
 
 
 class RAGAgent:
@@ -11,30 +13,49 @@ class RAGAgent:
         self.jobs = jobs
         self.semantic_engine = SemanticEngine()
 
+    @staticmethod
+    def _normalize_text(text: str) -> str:
+        text = text.lower().strip()
+        text = unicodedata.normalize("NFKD", text)
+        text = "".join(ch for ch in text if not unicodedata.combining(ch))
+        text = text.replace("’", "'")
+        text = re.sub(r"\s+", " ", text)
+        return text
+
     def analyze_user(self, user_input):
         """Analyse complète utilisateur avec scoring pondéré"""
         analysis_results = self.semantic_engine.analyze_user_input(user_input)
         top_jobs, job_scores = self.semantic_engine.get_top_jobs(analysis_results, self.jobs)
-        block_scores = analysis_results['block_scores']
-        global_score = sum(block_scores.values()) / len(block_scores) if block_scores else 0
+        block_scores = analysis_results["block_scores"]
 
         # Récupère les compétences requises des métiers recommandés
-        required_competencies = set()
+        mastered_raw = analysis_results["mastered"]
+        mastered_norm = {self._normalize_text(c) for c in mastered_raw}
+
+        required_competencies = []
         for job_title, _ in top_jobs:
             for job in self.jobs:
-                if job['title'] == job_title:
-                    for comp in job.get('required_competencies', []):
-                        if isinstance(comp, dict):
-                            required_competencies.add(comp['competency'])
-                        elif isinstance(comp, str):
-                            required_competencies.add(comp)
+                if job["title"] == job_title:
+                    for comp in job.get("required_competencies", []):
+                        required_competencies.append(comp["competency"] if isinstance(comp, dict) else comp)
 
-        # Compétences à renforcer = requises par les métiers recommandés et non maîtrisées
-        mastered = set(analysis_results['mastered'])
-        missing = list(required_competencies - mastered)
+        required_norm = {self._normalize_text(c) for c in required_competencies}
+        validated_in_top_jobs = sum(1 for comp in required_norm if comp in mastered_norm)
+        required_total = len(required_norm)
+
+        validated_ratio = (validated_in_top_jobs / required_total) if required_total > 0 else 0.0
+
+        # Même logique que pour les métiers: 0 -> x1.00, 100% -> x1.35
+        pertinence_multiplier = 1.0 + 0.35 * validated_ratio
+
+        # Score de pertinence = meilleur score parmi le top 3 métiers
+        global_score = top_jobs[0][1] if top_jobs else 0.0
+
+        missing = [c for c in required_competencies if self._normalize_text(c) not in mastered_norm]
+        missing = list(dict.fromkeys(missing))  # retire doublons en gardant l'ordre
 
         return {
-            "block_scores": block_scores,
+            "block_scores": block_scores, 
             "global_score": global_score,
             "mastered": analysis_results['mastered'],
             "missing": missing,
