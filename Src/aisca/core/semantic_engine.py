@@ -60,6 +60,7 @@ class SemanticEngine:
         text = re.sub(r"\s+", " ", text)
         return text
 
+    # Calibrage de la similarité pour mieux différencier les scores (le high n est pas utile mais le low et toujours utilisé pour éviter les faux positifs)
     @staticmethod
     def _calibrate_similarity(sim: float, low: float = 0.32, high: float = 0.70) -> float:
         return float(np.clip((sim - low) / (high - low), 0.0, 1.0))
@@ -81,7 +82,7 @@ class SemanticEngine:
         block_scores_by_id = {}
         mastered = []
         missing = []
-        competency_scores = {}  # normalized competency -> max similarity
+        competency_scores = {}  
 
         for block in self.competencies:
             block_id = block.get("block_id")

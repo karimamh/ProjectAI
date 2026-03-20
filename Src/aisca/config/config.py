@@ -19,6 +19,6 @@ ENABLE_CACHE = True
 CACHE_EMBEDDINGS = True
 CACHE_API_RESPONSES = True
 
-# API (pour génération future)
-API_PROVIDER = 'gemini'  # ou 'openai'
+# API 
+API_PROVIDER = 'gemini'  
 API_MAX_RETRIES = 3
